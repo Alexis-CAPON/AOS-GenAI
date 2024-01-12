@@ -1,1 +1,1 @@
-# ChatCBC
+# ChatCBC - End to End RAG 
