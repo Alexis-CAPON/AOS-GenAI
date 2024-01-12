@@ -11,6 +11,7 @@ def textPipeline(liveConversation, ragClient):
     )
 
     retrievedDocuments = results
+    print(retrievedDocuments)
     context = "\n".join(r.document for r in results)
 
     aiInstruction = f"""
@@ -26,10 +27,11 @@ def textPipeline(liveConversation, ragClient):
 
     Answer:
     """
-
+    
     response = streamingConversation(aiInstruction, userAnswer=True)
 
     liveConversation.append({"role": "assistant", "content": response.choices[0].message.content})
 
 
     return liveConversation, retrievedDocuments
+

@@ -3,6 +3,7 @@ import os
 import json
 
 os.environ["OPENAI_API_KEY"] = "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"
+
 client = OpenAI()
 
 def streamingConversation(userInput, instruction=None, previousContext=[], streaming=False, userAnswer=False):
@@ -24,13 +25,11 @@ def streamingConversation(userInput, instruction=None, previousContext=[], strea
         else:
             streamingMessage = [{"role": "system", "content": userInput}]
 
-
     response = client.chat.completions.create(
         model='gpt-3.5-turbo',
         messages=streamingMessage,
         stream=streaming
     )
-    print(response)
 
     streamingMessage.append({"role": "assistant", "content": response.choices[0].message.content})
 
@@ -38,7 +37,6 @@ def streamingConversation(userInput, instruction=None, previousContext=[], strea
         return response
     else:
         return streamingMessage
-
 
 
 def extractUserKeywords(userInput, previousContext = [], userRaise=False):
@@ -114,3 +112,4 @@ def extractUserKeywords(userInput, previousContext = [], userRaise=False):
 
 
     return extractedResponse
+

@@ -40,3 +40,4 @@ def ragInitialisation():
 
     print("Indexed.")
     return client
+

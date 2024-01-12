@@ -43,7 +43,6 @@ def chatSystem(userID, userInput, conversationID, pipeline, ragClient):
         liveConversation.append({"role": "assistant", "content": extractedResponse["otherQuestion"] })
         return liveConversation,[],[],[],conversationID
 
-
     if pipeline != -1:
         if pipeline == "powerpoint":
             extractedResponse["extracted"]["output"] = "powerpoint"
@@ -68,7 +67,7 @@ def chatSystem(userID, userInput, conversationID, pipeline, ragClient):
 
         case default:
             #default intention (text)
-            liveConversation, retrievedDocuments = textPipeline(liveConversation, ragClient)
+            liveConversation, retrievedDocuments = textPipeline(liveConversation,ragClient)
             pipeline = "text"
             extractedResponse["extracted"]["output"] = "text"
 
