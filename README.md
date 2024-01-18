@@ -193,7 +193,7 @@ Project Link: [https://github.com/Alexis-CAPON/ChatCBC/](https://github.com/Alex
 [issues-shield]: https://img.shields.io/github/issues/Alexis-CAPON/ChatCBC.svg?style=for-the-badge
 [issues-url]: https://github.com/Alexis-CAPON/ChatCBC/issues
 [license-shield]: https://img.shields.io/github/license/Alexis-CAPON/ChatCBC.svg?style=for-the-badge
-[license-url]: https://github.com/Alexis-CAPON/ChatCBC/blob/master/LICENSE.txt
+[license-url]: https://github.com/Alexis-CAPON/ChatCBC/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/alexis-capon
 [product-screenshot]: images/screenshot.png
