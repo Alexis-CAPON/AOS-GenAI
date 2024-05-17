@@ -19,11 +19,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Alexis-CAPON/ChatCBC/">
+  <a href="https://github.com/Alexis-CAPON/AOS-GenAI/">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">ChatCBC - End to End RAG</h3>
+<h3 align="center">All in One Secured Generative AI - End to End RAG</h3>
 
   <p align="center">
     project_description
