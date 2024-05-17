@@ -1,7 +1,7 @@
 from api_redis import *
 from main import *
 from flask_cors import CORS
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify#
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 import json
@@ -13,10 +13,12 @@ app = Flask(__name__)
 CORS(app) # CHANGE THIS IN DEPLOYED SERVER
 #CORS(app, resources={r"/*": {"origins": ["https://yourfrontend.com", "http://anotheralloweddomain.com"]}})
 
+
 limiter = Limiter(
     get_remote_address,
     app=app
 )
+
 
 # PostgreSQL configuration
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://username:password@localhost:5432/chat_db'
@@ -45,15 +47,17 @@ def index():
 def get_conversations(user_id):
     conversations = get_user_conversations(user_id)
     print("Get "+user_id+ " conversations")
+
     if not conversations:
-        return jsonify(error="No conversations found"), 404
+        return jsonify(conversations=[])
+        #return jsonify(error="No conversations found"), 404
     return jsonify(conversations=conversations)
 
 @app.route('/<user_id>/<conversation_id>', methods=['GET'])
-@limiter.limit("1/second", override_defaults=False)
 def get_a_conversation(user_id, conversation_id):
     conversation = get_conversation(user_id, conversation_id)
-    print("Get conversation")
+    print("Get conversation :")
+    print(conversation)
     if not conversation:
         return jsonify(error="No conversations found"), 404
     return jsonify(conversation=conversation)

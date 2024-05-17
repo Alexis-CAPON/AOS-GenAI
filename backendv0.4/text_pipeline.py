@@ -11,7 +11,6 @@ def textPipeline(liveConversation, ragClient):
     )
 
     retrievedDocuments = results
-    print(retrievedDocuments)
     context = "\n".join(r.document for r in results)
 
     aiInstruction = f"""

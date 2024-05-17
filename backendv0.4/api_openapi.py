@@ -56,7 +56,7 @@ def extractUserKeywords(userInput, previousContext = [], userRaise=False):
     if previousContext == [] or previousContext == None:
         if userRaise:
             aiInstruction = f"""
-            You are an AI LLM API use in a software workflow. You will receive text of a user, you must extract in the followed format keywords, entities, intention and context to catch the user need.
+            You are an AI LLM API used in a software workflow. You will receive text of a user, you must extract in the followed format keywords, entities, intention and context to catch the user need.
             {{
                     "extracted": {{
                         "keywords":[],
@@ -74,7 +74,7 @@ def extractUserKeywords(userInput, previousContext = [], userRaise=False):
             """
         else:
             aiInstruction = f"""
-            You are an AI LLM API use in a software workflow. You will receive text of a user, you must extract in the followed format keywords, entities, intention and context to catch the user need.
+            You are an AI LLM API used in a software workflow. You will receive text of a user, you must extract in the followed format keywords, entities, intention and context to catch the user need.
             {{
                     "extracted": {{
                         "keywords":[],

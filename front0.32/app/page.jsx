@@ -1,12 +1,9 @@
-import Login from './Login'
-import { LoginProvider } from './Context2'
-import { redirect } from 'next/navigation';
+import LandingPage from "@/app/_landingpage/LandingPage";
 
 export default function Home() {
-  redirect('/dashboard');
   return (
-    <LoginProvider>
-    <Login></Login>
-    </LoginProvider>
-  )
+    <div>
+      <LandingPage />
+    </div>
+  );
 }

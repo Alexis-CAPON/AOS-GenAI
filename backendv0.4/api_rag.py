@@ -11,9 +11,9 @@ def ragInitialisation():
 
     SharePointLoader = download_loader("SharePointReader")
 
-    loader = SharePointLoader(client_id = "4fde43c9-c163-469c-9211-9b2823e6c554", client_secret = "4g_8Q~are0OUGHeRkM6HynWKC0gwxEFWGjXiDbsx", tenant_id = "a62b600e-f8f3-4b75-888d-3dbbdb10962c")
+    loader = SharePointLoader(client_id = "adf465c0-8843-4cce-81cf-dff60b9d2c1b", client_secret = "TDK8Q~yyBWAjQh1_F6qW3dX66kzECjDBwQiEXcMB", tenant_id = "a62b600e-f8f3-4b75-888d-3dbbdb10962c")
 
-    documents = loader.load_data("Team 1","General",recursive = True)
+    documents = loader.load_data("Team 1","Test",recursive = True)
 
     documents = [
       doc.to_embedchain_format()

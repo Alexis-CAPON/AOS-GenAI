@@ -1,0 +1,4 @@
+vectordb:
+  provider: qdrant
+  config:
+    collection_name: Sharepoint1

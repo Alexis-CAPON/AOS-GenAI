@@ -4,26 +4,35 @@
 import time
 import json
 from flask import jsonify
-from rejson import Client
+#from rejson import Client
+import redis
 
 # Redis configuration
 redis_host = "localhost"
 redis_port = 6379
 redis_password = ""
-r = Client(host=redis_host, port=redis_port, password=redis_password, decode_responses=True)
-
+#r = Client(host=redis_host, port=redis_port, password=redis_password, decode_responses=True)
+r = redis.Redis(
+  host='redis-18626.c246.us-east-1-4.ec2.redns.redis-cloud.com',
+  port=18626,
+  password='0KngtMDTzddzmyUFndykjKXseHDVcw8v',
+  decode_responses=True
+  )
+rdebug = True
 
 def get_user_conversations(user_id):
     # Pattern to match all conversations of a user
-    print(user_id)
+ 
     pattern = f"user_id:{user_id}:conversation_id:*"
+
     all_keys = r.keys(pattern)
 
-    conversations = [r.jsonget(keys) for keys in all_keys]
+    conversations = [r.json().get(keys) for keys in all_keys]
 
     # Sort by last_modified timestamp in descending order
     sorted_conversations = sorted(conversations, key=lambda x: x['last_modified'], reverse=True)
-
+    if rdebug:
+        print("get_user_conversations: "+user_id+" - Conversations successfully retrieved")
     # Return the sorted conversations or just their IDs, depending on your needs
     return sorted_conversations
 
@@ -33,7 +42,7 @@ def get_conversation(user_id, conversation_id):
     redis_key = f"user_id:{user_id}:conversation_id:{conversation_id}"
 
     # Fetch from Redis
-    conversation = r.jsonget(redis_key)
+    conversation = r.json().get(redis_key)
     print("get_conversation: "+conversation_id+" - Conversation successfully retrieved")
 
     # If not in Redis, fetch from PostgreSQL
@@ -72,7 +81,7 @@ def update_conversation_to_redis(conversation_id, user_id, conversationContent, 
     print("update_conversation_to_redis: "+conversation_id+" - Conversation successfully updated")
 
     # Update Redis
-    r.jsonset(redis_key, '$' ,conversationUpdated)
+    r.json().set(redis_key, '$' ,conversationUpdated)
 
 
 

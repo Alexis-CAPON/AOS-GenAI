@@ -22,6 +22,24 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "auth.ts",
+    "auth.ts",
+    "auth.ts",
+    "app/api/auth/[...nextauth]/route.jsx",
+    "auth.ts",
+    "app/_app.jsx",
+    "app/api/auth/[...nextauth]/route.js",
+    "app/api/auth/[...nextauth]/route.js",
+    "app/dashboard/_components/BaseChat.js",
+    "app/dashboard/layout.jsx",
+    "hooks/use-current-role.ts",
+    "app/dashboard/_components/DrawerSettings.js",
+    "middleware.js"
+  ],
   "exclude": ["node_modules"]
 }
