@@ -23,7 +23,7 @@ export default function LandingPage() {
         <div className="flex flex-col items-left space-y-8">
           <Article
             date="01/2024"
-            title="ChatCBC - Prototype v0.2 - Release"
+            title="AOS - Prototype v0.2 - Release"
             content="This is some **bold text** and *italic text*. Here's a list: 
           - Item 1  
           - Item 2  
@@ -49,7 +49,7 @@ export default function LandingPage() {
 
           <Article
             date="01/2024"
-            title="ChatCBC - Prototype v0.2 - Dev"
+            title="AOS - Prototype v0.2 - Dev"
             content="Dev"
             authors={["Alexis Capon"]}
             version="0.1"
