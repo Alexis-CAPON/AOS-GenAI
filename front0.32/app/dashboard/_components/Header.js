@@ -40,20 +40,8 @@ const Header = () => {
 
   const rag = [
     {
-      value: "cgi_global",
-      label: "CGI Global",
-    },
-    {
-      value: "architect",
-      label: "Architect",
-    },
-    {
-      value: "engie",
-      label: "Engie",
-    },
-    {
-      value: "personal",
-      label: "Personal",
+      value: "...",
+      label: "...",
     },
   ];
 
