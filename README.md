@@ -8,7 +8,7 @@
 </pre>
 </div>
 <p align="center">
-	<em>Empower Your AI Journey with AOS-GenAI: Unleashing Intelligent Connections!</em>
+	<em>All in one Secured Generative AI - RAG System!</em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/Alexis-CAPON/AOS-GenAI?style=default&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
